@@ -2,13 +2,14 @@
     "intoroTalk":[
         {
             "dataType":"talk",
-            "who":"Aさん",
+            "who":"kotori",
             "content":"セリフ"
         },
         {
             "dataType":"img",
-            "who":"Bさん",
-            "content":"imagePath"
+            "who":"narration",
+            "contentText":"text",
+            "contentImg":"imagePath"
         }
     ],
     "choice":{
@@ -27,12 +28,12 @@
     "answerTalk":[
         {
             "dataType":"talk",
-            "who":"Aさん",
+            "who":"kotori",
             "content":"セリフ"
         },
         {
             "dataType":"img",
-            "who":"Bさん",
+            "who":"narration",
             "content":"imagePath"
         }
     ],
