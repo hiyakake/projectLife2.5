@@ -17,10 +17,26 @@
                 <h1 id="number">Q{{quesNo}}</h1>
             </header>
             <main>
-                <p class="talk whoIsI">高校の制服が届いた！<br>着てみよう！</p>
-                <p>うほっ</p>
-                <button v-on:click='quesNo++;getQuesJson()'>get JSON</button>
-                <p>JSON is :{{json.intoroTalk[0].content}}</p>
+                <!--前談-->
+                <section id="intoroTalk">
+                    <ul>
+                        <li v-for='talk in json.intoroTalk' v-bind:data-who='talk.who' v-bind:class='talk.dataType'>
+                            <p v-if='talk.dataType == "talk"' v-html='talk.content'></p>
+                            <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who'>
+                                <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
+                                <p v-html='talk.contentText'></p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!--選択肢-->
+                <section id="choice">
+                    <ul>
+                        <li v-for='choice in json.choice'>
+                            <p>{{choice[0].judge}}</p> <!--TODO:個々の処理まだ。場合によってはJSON形式変える-->
+                        </li>
+                    </ul>
+                </section>
             </main>
         </section>
     </div>

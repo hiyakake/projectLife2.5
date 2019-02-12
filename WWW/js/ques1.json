@@ -1,0 +1,44 @@
+{
+    "intoroTalk":[
+        {
+            "dataType":"talk",
+            "who":"kotori",
+            "content":"高校の制服が届いた！<br>着てみよう！"
+        },
+        {
+            "dataType":"img",
+            "who":"narration",
+            "contentText":"顔は隠して、<br>位置情報も無効にして...<br>これなら投稿してもいいよね！？",
+            "contentImg":"自撮り.svg"
+        }
+    ],
+    "choice":{
+        "buttonList":[
+            {
+                "choiceContent":"選択肢１内容",
+                "judge":false 
+            },
+            {
+                "choiceContent":"選択肢２内容",
+                "judge":true 
+            }
+        ],
+        "html":"html tag here"
+    },
+    "answerTalk":[
+        {
+            "dataType":"talk",
+            "who":"kotori",
+            "content":"セリフ"
+        },
+        {
+            "dataType":"img",
+            "who":"narration",
+            "content":"imagePath"
+        }
+    ],
+    "description":[
+        "説明文段落１",
+        "説明文段落２"
+    ]
+}
