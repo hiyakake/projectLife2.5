@@ -32,8 +32,8 @@
                 <!--選択肢-->
                 <section id="choice">
                     <ul>
-                        <li v-for='choice in json.choice'>
-                            <p>{{choice[0].judge}}</p> <!--TODO:個々の処理まだ。場合によってはJSON形式変える-->
+                        <li v-if='json.choice.dataType == "buttonList"' v-for='choice in json.choice.content'>
+                            <p>{{choice.choiceContent}}</p> <!--TODO:個々の処理まだ。場合によってはJSON形式変える-->
                         </li>
                     </ul>
                 </section>
