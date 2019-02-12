@@ -1,44 +1,65 @@
-{
-    "intoroTalk":[
+{ //コメントは削除して使用してください
+    //必要なカンマなどを誤って消去してしまわないように注意
+    "intoroTalk":[ //前話
         {
-            "dataType":"talk",
-            "who":"kotori",
-            "content":"セリフ"
+            "dataType":"talk", //テキストだけの場合はこのタイプ
+            "who":"kotori", //誰が話すのか（kotori or narration)
+            "content":"セリフ" //セリフ本文　１行にまとめて普通に<br>使用OK
         },
         {
-            "dataType":"img",
-            "who":"narration",
-            "contentText":"text",
-            "contentImg":"imagePath"
+            "dataType":"img", //画像及び画像とテキストセットの吹き出しの場合はこれ
+            "who":"narration", 
+            "contentText":"text", //テキスト　ない場合はnullを入れる
+            "contentImg":"imagePath" //画像ファイルの名前を入れる
         }
     ],
-    "choice":{
-        "buttonList":[
+    "choice":{ //回答選択肢
+        "dataType":"buttonList", //選択肢のタイプ（buttonList = 普通のやつ  htmlChoice = HTMLの中からやるタイプ
+        "content":[ //配列型で格納し、buttonListの場合はボタンの数だけ配列を。htmlChoiceの場合は配列数は１で、１行でhtmlタグを格納する。そのさい、”ダブルクオート”を\"ダブルクオート\"とすることで問題を回避可能
             {
-                "choiceContent":"選択肢１内容",
-                "judge":false 
+                "choiceContent":"選択肢１内容", //内容を書き込む。改行する場合は１行に収めて<br>
+                "judge":false //この選択肢が正解の場合はtrue htmlChoiceの場合はnull
             },
             {
                 "choiceContent":"選択肢２内容",
                 "judge":true 
             }
-        ],
-        "html":"html tag here"
+        ]
     },
-    "answerTalk":[
-        {
-            "dataType":"talk",
-            "who":"kotori",
-            "content":"セリフ"
-        },
-        {
-            "dataType":"img",
-            "who":"narration",
-            "content":"imagePath"
-        }
-    ],
-    "description":[
-        "説明文段落１",
-        "説明文段落２"
-    ]
+    "answerTalk":{ //回答後のセリフ 書き方はintoroTalk同様
+        "ifTrue":[ //正解だった場合の内容
+            {
+                "dataType":"talk",
+                "who":"kotori",
+                "content":"セリフ"
+            },
+            {
+                "dataType":"img",
+                "who":"narration",
+                "content":"imagePath"
+            }
+        ],
+        "ifFalse":[ //不正解だった場合の内容
+            {
+                "dataType":"talk",
+                "who":"kotori",
+                "content":"セリフ"
+            },
+            {
+                "dataType":"img",
+                "who":"narration",
+                "content":"imagePath"
+            }
+        ]
+    },
+    "description":{ //補足文章
+        "ifTrue":[  //正解だった場合
+            "説明文段落１", //段落ごとに配列に格納
+            "説明文段落２"
+        ],
+        "ifFalse":[ //不正解だった場合
+            "説明文段落１",
+            "説明文段落２"
+        ]
+    }
 }
