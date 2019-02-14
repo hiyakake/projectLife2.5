@@ -2,7 +2,8 @@ new Vue({
     el:'#vm',
     data:{
         quesNo:1,
-        json:null
+        json:null,
+        choiceSelect:null //どの選択肢を選択したかを保持
     },
     methods:{
         getQuesJson:function(){

@@ -33,9 +33,38 @@
                 <section id="choice">
                     <ul>
                         <li v-if='json.choice.dataType == "buttonList"' v-for='choice in json.choice.content'>
-                            <p>{{choice.choiceContent}}</p> <!--TODO:個々の処理まだ。場合によってはJSON形式変える-->
+                            <p v-if='choice.judge == true' v-on:click='choiceSelect = true'>{{choice.choiceContent}}</p>
+                            <p v-if='choice.judge == false' v-on:click='choiceSelect = false'>{{choice.choiceContent}}</p>
                         </li>
                     </ul>
+                </section>
+                <!--選択後トーク-->
+                <section id="answerTalk">
+                    <ul>
+                        <!--もし正解を選択した場合-->
+                        <li v-if='choiceSelect == true' v-for='talk in json.answerTalk.ifTrue' v-bind:data-who='talk.who' v-bind:class='talk.dataType'>
+                            <p v-if='talk.dataType == "talk"' v-html='talk.content'></p>
+                            <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who'>
+                                <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
+                                <p v-html='talk.contentText'></p>
+                            </div>
+                        </li>
+                        <!--もし不正解を選択した場合-->
+                        <li v-if='choiceSelect == false' v-for='talk in json.answerTalk.ifTrue' v-bind:data-who='talk.who' v-bind:class='talk.dataType'>
+                                <p v-if='talk.dataType == "talk"' v-html='talk.content'></p>
+                                <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who'>
+                                    <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
+                                    <p v-html='talk.contentText'></p>
+                                </div>
+                            </li>
+                    </ul>
+                </section>
+                <!--説明文-->
+                <section id="description">
+                    <!--正解だった場合-->
+                    <p v-if='choiceSelect == true' v-for='text in json.description.ifTrue'>{{text}}</p>
+                    <!--不正解だった場合-->
+                    <p v-if='choiceSelect == false' v-for='text in json.description.ifTrue'>{{text}}</p>
                 </section>
             </main>
         </section>
