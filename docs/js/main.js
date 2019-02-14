@@ -10,7 +10,7 @@ new Vue({
             //テストサーバーから取得
             //const URL = 'https://dev1.cre-noa.me/quesAPI.php?q='+(this.quesNo*100)
             //サンプルデータから取得
-            const URL = 'js/ques1.json'
+            const URL = 'api/ques1.json'
             axios
                 .get(URL)
                 .then(response => (this.json = response.data))
