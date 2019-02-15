@@ -1,0 +1,49 @@
+@import url("reset.css");
+body,
+#vm {
+  width: 100%;
+}
+
+body {
+  background-image: url(../images/background.gif);
+  background-repeat: repeat;
+}
+
+#welcome,
+#ques {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#welcome header {
+  background-image: url(../images/heroimg.jpg);
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  position: relative;
+}
+
+#welcome header button {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 1em 0;
+  font-size: 2em;
+  background-color: orange;
+  border: none;
+  color: white;
+  -webkit-box-shadow: red 5px 5px 0px;
+          box-shadow: red 5px 5px 0px;
+}
+
+#welcome footer {
+  background-color: #00af9e;
+  color: white;
+  padding: 0.8em 0;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
