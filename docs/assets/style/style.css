@@ -1,4 +1,11 @@
 @import url("reset.css");
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 body,
 #vm {
   width: 100%;
@@ -45,5 +52,91 @@ body {
   color: white;
   padding: 0.8em 0;
   text-align: center;
+}
+
+#ques header {
+  background-color: #00ADA5;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  padding: .7em 0;
+}
+
+#ques main #intoroTalk,
+#ques main #answerTalk {
+  line-height: 1.5;
+  font-size: 1.3em;
+}
+
+#ques main #intoroTalk .talk,
+#ques main #answerTalk .talk {
+  background-color: white;
+  display: inline-block;
+  padding: 1em;
+}
+
+#ques main #intoroTalk .talk[data-who=kotori],
+#ques main #answerTalk .talk[data-who=kotori] {
+  border-left: 5px solid #00ADA5;
+  float: left;
+  margin-left: 5%;
+}
+
+#ques main #intoroTalk .talk[data-who=narration],
+#ques main #answerTalk .talk[data-who=narration] {
+  border-right: 5px solid #D9E021;
+  float: right;
+  margin-right: 5%;
+}
+
+#ques main #intoroTalk .talk p,
+#ques main #answerTalk .talk p {
+  display: block;
+}
+
+#ques main #intoroTalk .img,
+#ques main #answerTalk .img {
+  background-color: white;
+  display: inline-block;
+  padding: 1em;
+}
+
+#ques main #intoroTalk .img[data-who=kotori],
+#ques main #answerTalk .img[data-who=kotori] {
+  border-left: 5px solid #00ADA5;
+  float: left;
+  margin-left: 5%;
+}
+
+#ques main #intoroTalk .img[data-who=narration],
+#ques main #answerTalk .img[data-who=narration] {
+  border-right: 5px solid #D9E021;
+  float: right;
+  margin-right: 5%;
+}
+
+#ques main #intoroTalk .img img,
+#ques main #answerTalk .img img {
+  display: block;
+}
+
+#ques main #intoroTalk .img p,
+#ques main #answerTalk .img p {
+  display: block;
+}
+
+#ques main #choice {
+  display: block;
+  clear: both;
+}
+
+#ques main #choice li {
+  display: inline-block;
+  background-color: #00ADA5;
+  color: white;
+}
+
+#ques main #choice li p {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

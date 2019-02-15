@@ -1,5 +1,15 @@
 @import url('reset.css');
 
+
+$blue:#00ADA5;
+$yellow:#D9E021;
+$aqua:#80e6c8;
+$darkBlue:#0b7b78;
+
+body{
+    user-select: none;
+}
+
 body,
 #vm{
     width: 100%;
@@ -50,4 +60,74 @@ body{
         text-align: center;
     }
     
+}
+
+#ques{
+    header{
+        background-color: $blue;
+        color: white;
+        text-align: center;
+        font-size: 3em;
+        padding: .7em 0;
+    }
+
+    main{
+        //Talks
+        #intoroTalk,
+        #answerTalk{
+            line-height: 1.5;
+            font-size: 1.3em;
+            .talk{
+                background-color: white;
+                display: inline-block;
+                padding: 1em;
+                &[data-who=kotori]{
+                    border-left: 5px solid $blue;
+                    float: left;
+                    margin-left: 5%;
+                }
+                &[data-who=narration]{
+                    border-right: 5px solid $yellow;
+                    float: right;
+                    margin-right: 5%;
+                }
+                p{
+                    display: block;
+                }
+            }
+            .img{
+                background-color: white;
+                display: inline-block;
+                padding: 1em;
+                &[data-who=kotori]{
+                    border-left: 5px solid $blue;
+                    float: left;
+                    margin-left: 5%;
+                }
+                &[data-who=narration]{
+                    border-right: 5px solid $yellow;
+                    float: right;
+                    margin-right: 5%;
+                }
+                img{
+                    display: block;
+                }
+                p{
+                    display: block;
+                }
+            }
+        }
+        #choice{
+            display: block;
+            clear: both;
+            li{
+                display: inline-block;
+                background-color: $blue;
+                color: white;
+                p{
+                    display: block;
+                }
+            }
+        }
+    }
 }
