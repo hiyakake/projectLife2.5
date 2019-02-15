@@ -16,8 +16,7 @@ body {
   background-repeat: repeat;
 }
 
-#welcome,
-#ques {
+#welcome {
   max-width: 650px;
   margin: 0 auto;
 }
@@ -62,6 +61,11 @@ body {
   padding: .7em 0;
 }
 
+#ques main {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
 #ques main #intoroTalk,
 #ques main #answerTalk {
   line-height: 1.5;
@@ -69,74 +73,120 @@ body {
 }
 
 #ques main #intoroTalk .talk,
-#ques main #answerTalk .talk {
-  background-color: white;
-  display: inline-block;
-  padding: 1em;
+#ques main #intoroTalk .img,
+#ques main #answerTalk .talk,
+#ques main #answerTalk .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #ques main #intoroTalk .talk[data-who=kotori],
-#ques main #answerTalk .talk[data-who=kotori] {
-  border-left: 5px solid #00ADA5;
-  float: left;
-  margin-left: 5%;
+#ques main #intoroTalk .img[data-who=kotori],
+#ques main #answerTalk .talk[data-who=kotori],
+#ques main #answerTalk .img[data-who=kotori] {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-left: 5%;
 }
 
 #ques main #intoroTalk .talk[data-who=narration],
-#ques main #answerTalk .talk[data-who=narration] {
-  border-right: 5px solid #D9E021;
-  float: right;
-  margin-right: 5%;
+#ques main #intoroTalk .img[data-who=narration],
+#ques main #answerTalk .talk[data-who=narration],
+#ques main #answerTalk .img[data-who=narration] {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding-right: 5%;
 }
 
-#ques main #intoroTalk .talk p,
-#ques main #answerTalk .talk p {
-  display: block;
-}
-
-#ques main #intoroTalk .img,
-#ques main #answerTalk .img {
+#ques main #intoroTalk .talk > p,
+#ques main #intoroTalk .talk > div,
+#ques main #intoroTalk .img > p,
+#ques main #intoroTalk .img > div,
+#ques main #answerTalk .talk > p,
+#ques main #answerTalk .talk > div,
+#ques main #answerTalk .img > p,
+#ques main #answerTalk .img > div {
   background-color: white;
   display: inline-block;
   padding: 1em;
+  max-width: 70%;
 }
 
-#ques main #intoroTalk .img[data-who=kotori],
-#ques main #answerTalk .img[data-who=kotori] {
-  border-left: 5px solid #00ADA5;
-  float: left;
-  margin-left: 5%;
+#ques main #intoroTalk .talk > p[data-who=kotori],
+#ques main #intoroTalk .talk > div[data-who=kotori],
+#ques main #intoroTalk .img > p[data-who=kotori],
+#ques main #intoroTalk .img > div[data-who=kotori],
+#ques main #answerTalk .talk > p[data-who=kotori],
+#ques main #answerTalk .talk > div[data-who=kotori],
+#ques main #answerTalk .img > p[data-who=kotori],
+#ques main #answerTalk .img > div[data-who=kotori] {
+  border-left: 10px solid #00ADA5;
 }
 
-#ques main #intoroTalk .img[data-who=narration],
-#ques main #answerTalk .img[data-who=narration] {
-  border-right: 5px solid #D9E021;
-  float: right;
-  margin-right: 5%;
+#ques main #intoroTalk .talk > p[data-who=narration],
+#ques main #intoroTalk .talk > div[data-who=narration],
+#ques main #intoroTalk .img > p[data-who=narration],
+#ques main #intoroTalk .img > div[data-who=narration],
+#ques main #answerTalk .talk > p[data-who=narration],
+#ques main #answerTalk .talk > div[data-who=narration],
+#ques main #answerTalk .img > p[data-who=narration],
+#ques main #answerTalk .img > div[data-who=narration] {
+  border-right: 10px solid #D9E021;
 }
 
-#ques main #intoroTalk .img img,
-#ques main #answerTalk .img img {
-  display: block;
-}
-
-#ques main #intoroTalk .img p,
-#ques main #answerTalk .img p {
-  display: block;
+#ques main #intoroTalk .talk:not(:last-child),
+#ques main #intoroTalk .img:not(:last-child),
+#ques main #answerTalk .talk:not(:last-child),
+#ques main #answerTalk .img:not(:last-child) {
+  margin: 1.5rem 0;
 }
 
 #ques main #choice {
-  display: block;
-  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 #ques main #choice li {
-  display: inline-block;
+  display: block;
   background-color: #00ADA5;
   color: white;
+  padding: 1em;
+  font-size: 1.3em;
+  line-height: 1.5;
+  min-width: 50vw;
+  cursor: pointer;
 }
 
-#ques main #choice li p {
-  display: block;
+#ques main #choice li:not(:last-child) {
+  margin: 0.75rem 0;
+}
+
+#ques main #choice #choiceMargin {
+  height: 40vh;
+}
+
+#ques main #description {
+  background-color: #80e6c8;
+  width: 90%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 1.5rem auto;
+}
+
+#ques main #description p {
+  width: 90%;
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.5;
 }
 /*# sourceMappingURL=style.css.map */

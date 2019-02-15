@@ -28,9 +28,9 @@
                 <!--前談-->
                 <section id="intoroTalk">
                     <ul>
-                        <li v-for='talk in json.intoroTalk' v-bind:data-who='talk.who' v-bind:class='talk.dataType'>
-                            <p v-if='talk.dataType == "talk"' v-html='talk.content'></p>
-                            <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who'>
+                        <li v-for='talk in json.intoroTalk' v-bind:class='talk.dataType' v-bind:data-who='talk.who'>
+                            <p v-if='talk.dataType == "talk"' v-html='talk.content' v-bind:data-who='talk.who'></p>
+                            <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who' v-bind:data-who='talk.who'>
                                 <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
                                 <p v-html='talk.contentText'></p>
                             </div>
@@ -45,22 +45,24 @@
                             <p v-if='choice.judge == false' v-on:click='choiceSelect = false'>{{choice.choiceContent}}</p>
                         </li>
                     </ul>
+                    <!--選択前下に余白を開けるための要素-->
+                    <div id="choiceMargin" v-if='choiceSelect == null'></div>
                 </section>
                 <!--選択後トーク-->
                 <section id="answerTalk">
                     <ul>
                         <!--もし正解を選択した場合-->
-                        <li v-if='choiceSelect == true' v-for='talk in json.answerTalk.ifTrue' v-bind:data-who='talk.who' v-bind:class='talk.dataType'>
-                            <p v-if='talk.dataType == "talk"' v-html='talk.content'></p>
-                            <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who'>
+                        <li v-if='choiceSelect == true' v-for='talk in json.answerTalk.ifTrue' v-bind:class='talk.dataType' v-bind:data-who='talk.who'>
+                            <p v-if='talk.dataType == "talk"' v-html='talk.content' v-bind:data-who='talk.who'></p>
+                            <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who' v-bind:data-who='talk.who'>
                                 <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
                                 <p v-html='talk.contentText'></p>
                             </div>
                         </li>
                         <!--もし不正解を選択した場合-->
-                        <li v-if='choiceSelect == false' v-for='talk in json.answerTalk.ifTrue' v-bind:data-who='talk.who' v-bind:class='talk.dataType'>
-                                <p v-if='talk.dataType == "talk"' v-html='talk.content'></p>
-                                <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who'>
+                        <li v-if='choiceSelect == false' v-for='talk in json.answerTalk.ifTrue' v-bind:class='talk.dataType' v-bind:data-who='talk.who'>
+                                <p v-if='talk.dataType == "talk"' v-html='talk.content' v-bind:data-who='talk.who'></p>
+                                <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who' v-bind:data-who='talk.who'>
                                     <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
                                     <p v-html='talk.contentText'></p>
                                 </div>

@@ -5,6 +5,7 @@ $blue:#00ADA5;
 $yellow:#D9E021;
 $aqua:#80e6c8;
 $darkBlue:#0b7b78;
+$hukidasiMargin:1.5rem;
 
 body{
     user-select: none;
@@ -20,13 +21,11 @@ body{
     background-repeat: repeat;
 }
 
-#welcome,
-#ques{
-    max-width: 650px;
-    margin: 0 auto;
-}
+
 
 #welcome{
+    max-width: 650px;
+    margin: 0 auto;
     header{
         background-image: url(../images/heroimg.jpg);
         background-size: cover;
@@ -63,6 +62,7 @@ body{
 }
 
 #ques{
+    
     header{
         background-color: $blue;
         color: white;
@@ -72,61 +72,73 @@ body{
     }
 
     main{
+        max-width: 650px;
+        margin: 0 auto;
         //Talks
         #intoroTalk,
         #answerTalk{
             line-height: 1.5;
             font-size: 1.3em;
-            .talk{
-                background-color: white;
-                display: inline-block;
-                padding: 1em;
-                &[data-who=kotori]{
-                    border-left: 5px solid $blue;
-                    float: left;
-                    margin-left: 5%;
-                }
-                &[data-who=narration]{
-                    border-right: 5px solid $yellow;
-                    float: right;
-                    margin-right: 5%;
-                }
-                p{
-                    display: block;
-                }
-            }
+            .talk,
             .img{
-                background-color: white;
-                display: inline-block;
-                padding: 1em;
+                display: flex;
                 &[data-who=kotori]{
-                    border-left: 5px solid $blue;
-                    float: left;
-                    margin-left: 5%;
+                    flex-direction: row;
+                    padding-left:5%; 
                 }
                 &[data-who=narration]{
-                    border-right: 5px solid $yellow;
-                    float: right;
-                    margin-right: 5%;
+                    flex-direction: row-reverse;
+                    padding-right:5%; 
                 }
-                img{
-                    display: block;
+                >p,
+                >div{
+                    background-color: white;
+                    display: inline-block;
+                    padding: 1em;
+                    max-width: 70%;
+                    &[data-who=kotori]{
+                        border-left: 10px solid $blue;
+                    }
+                    &[data-who=narration]{
+                        border-right: 10px solid $yellow;
+                    }
                 }
-                p{
-                    display: block;
+                &:not(:last-child){
+                    margin: $hukidasiMargin 0;
                 }
             }
+           
         }
         #choice{
-            display: block;
-            clear: both;
+            display: flex;
+            flex-direction: row-reverse;
             li{
-                display: inline-block;
+                display: block;
                 background-color: $blue;
                 color: white;
-                p{
-                    display: block;
-                }
+                padding: 1em;
+                font-size: 1.3em;
+                line-height: 1.5;
+                min-width: 50vw; //TODO:PCの場合はpx指定にする
+                cursor: pointer;
+            }
+            li:not(:last-child){
+                margin: $hukidasiMargin*0.5 0;
+            }
+            #choiceMargin{
+                height: 40vh;
+            }
+        }
+        #description{
+            background-color: $aqua;
+            width: 90%;
+            box-sizing: border-box;
+            margin: $hukidasiMargin auto;
+            p{
+                width: 90%;
+                padding: 1em;
+                font-size: 1.2em;
+                line-height: 1.5;
             }
         }
     }
