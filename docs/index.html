@@ -39,7 +39,7 @@
                 </section>
                 <!--選択肢-->
                 <section id="choice">
-                    <ul>
+                    <ul> <!--TODO:これだとどちらかは２回メイクも押せてしまうので、v-onの中にif文を書いて、flag == falseだったら押せるようにするなどの工夫が必要-->
                         <li v-if='json.choice.dataType == "buttonList"' v-for='choice in json.choice.content'>
                             <p v-if='choice.judge == true' v-on:click.once='choiceSelect = true'>{{choice.choiceContent}}</p>
                             <p v-if='choice.judge == false' v-on:click.once='choiceSelect = false'>{{choice.choiceContent}}</p>
