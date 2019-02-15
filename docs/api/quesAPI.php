@@ -1,7 +1,7 @@
 <?php
-  $reqid = $_GET[q];
 
-echo '
+  $reqid = $_GET[q];
+$maindata ='
 
 {
     "intoroTalk":[
@@ -49,5 +49,8 @@ echo '
 
 
 ';
+
+header('Content-Type: application/json; charset=utf-8');
+echo $maindata;
 
  ?>
