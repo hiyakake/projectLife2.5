@@ -4,7 +4,7 @@ new Vue({
         quesNo:1, //問題進行番号
         json:null, //QuesAPI
         choiceSelect:null, //どの選択肢を選択したかを保持,
-        screenSwitch:'ques' //画面遷移
+        screenSwitch:'hello' //画面遷移
     },
     methods:{
         getQuesJson:function(){

@@ -16,12 +16,12 @@ body {
   background-repeat: repeat;
 }
 
-#welcome {
+#hello {
   max-width: 650px;
   margin: 0 auto;
 }
 
-#welcome header {
+#hello header {
   background-image: url(../images/heroimg.jpg);
   background-size: cover;
   background-position: center center;
@@ -29,7 +29,7 @@ body {
   position: relative;
 }
 
-#welcome header button {
+#hello header button {
   position: absolute;
   bottom: 10%;
   left: 0;
@@ -46,7 +46,7 @@ body {
           box-shadow: red 5px 5px 0px;
 }
 
-#welcome footer {
+#hello footer {
   background-color: #00af9e;
   color: white;
   padding: 0.8em 0;
