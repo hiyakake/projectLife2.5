@@ -41,8 +41,8 @@
                 <section id="choice">
                     <ul>
                         <li v-if='json.choice.dataType == "buttonList"' v-for='choice in json.choice.content'>
-                            <p v-if='choice.judge == true' v-on:click='choiceSelect = true'>{{choice.choiceContent}}</p>
-                            <p v-if='choice.judge == false' v-on:click='choiceSelect = false'>{{choice.choiceContent}}</p>
+                            <p v-if='choice.judge == true' v-on:click.once='choiceSelect = true'>{{choice.choiceContent}}</p>
+                            <p v-if='choice.judge == false' v-on:click.once='choiceSelect = false'>{{choice.choiceContent}}</p>
                         </li>
                     </ul>
                     <!--選択前下に余白を開けるための要素-->
