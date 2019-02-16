@@ -101,7 +101,7 @@ body {
 
 #ques main #intoroTalk,
 #ques main #answerTalk {
-  line-height: 1.5;
+  line-height: 1.8;
   font-size: 1.3em;
 }
 
@@ -176,7 +176,7 @@ body {
 #ques main #intoroTalk .img:not(:last-child),
 #ques main #answerTalk .talk:not(:last-child),
 #ques main #answerTalk .img:not(:last-child) {
-  margin: 1.5rem 0;
+  margin: 1.8rem 0;
 }
 
 #ques main #choice {
@@ -194,7 +194,7 @@ body {
   background-color: #00ADA5;
   color: white;
   font-size: 1.3em;
-  line-height: 1.5;
+  line-height: 1.8;
   min-width: 50vw;
   cursor: pointer;
 }
@@ -204,7 +204,7 @@ body {
 }
 
 #ques main #choice li:not(:last-child) {
-  margin: 0.75rem 0;
+  margin: 0.9rem 0;
 }
 
 #ques main #choice #choiceMargin {
@@ -216,14 +216,14 @@ body {
   width: 90%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 1.5rem auto;
+  margin: 1.8rem auto;
 }
 
 #ques main #description p {
   width: 90%;
   padding: 1em;
   font-size: 1.2em;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 #ques footer {
@@ -231,6 +231,25 @@ body {
   color: white;
   height: 10vh;
   position: relative;
+  min-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#ques footer.addMargin {
+  margin-top: 3rem;
+}
+
+#ques footer.addMargin small {
+  -webkit-transform: translateY(1em);
+          transform: translateY(1em);
 }
 
 #ques footer #nextQues {
@@ -250,12 +269,7 @@ body {
 #ques footer small {
   display: block;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
   padding: 1em 0;
+  font-size: 0.6em;
 }
 /*# sourceMappingURL=style.css.map */

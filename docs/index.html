@@ -83,7 +83,7 @@
                     <p v-if='choiceSelect == false' v-for='text in json.description.ifTrue' v-html='text'></p>
                 </section>
             </main>
-            <footer>
+            <footer v-bind:class='{ addMargin : choiceSelect != null }'>
                 <button v-on:click='nextQues()' v-if='choiceSelect != null' id="nextQues" class="fas fa-arrow-right"></button>
                 <small>Copyright (C) nextlav.xyz 2015-2019</small>
             </footer>
