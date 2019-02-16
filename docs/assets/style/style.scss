@@ -138,11 +138,14 @@ body{
                 display: block;
                 background-color: $blue;
                 color: white;
-                padding: 1em;
+                //padding: 1em;
                 font-size: 1.3em;
                 line-height: 1.5;
                 min-width: 50vw; //TODO:PCの場合はpx指定にする
                 cursor: pointer;
+                p{
+                    padding: 1em;
+                }
             }
             li:not(:last-child){
                 margin: $hukidasiMargin*0.5 0;

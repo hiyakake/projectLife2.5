@@ -187,11 +187,14 @@ body {
   display: block;
   background-color: #00ADA5;
   color: white;
-  padding: 1em;
   font-size: 1.3em;
   line-height: 1.5;
   min-width: 50vw;
   cursor: pointer;
+}
+
+#ques main #choice li p {
+  padding: 1em;
 }
 
 #ques main #choice li:not(:last-child) {
