@@ -80,6 +80,7 @@ body{
             background-color: $darkBlue;
             position: absolute;
             bottom: 0;
+            overflow: hidden;
             #progressLine{
                 height: 100%;
                 background-color: $yellow;
