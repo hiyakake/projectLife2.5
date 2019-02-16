@@ -22,6 +22,9 @@ new Vue({
                 .get(URL)
                 .then(response => (this.json = response.data))
         },
+        selectJudge:function(elementAttr){
+            if(this.choiceSelect == null) this.choiceSelect = elementAttr
+        },
         nextQues:function(){
             //次の問題のランクを決定
             if(this.choiceSelect == true) this.quesRank++

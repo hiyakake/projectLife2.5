@@ -40,10 +40,10 @@
                 </section>
                 <!--選択肢-->
                 <section id="choice">
-                    <ul> <!--TODO:これだとどちらかは２回メイクも押せてしまうので、v-onの中にif文を書いて、flag == falseだったら押せるようにするなどの工夫が必要-->
+                    <ul>
                         <li v-if='json.choice.dataType == "buttonList"' v-for='choice in json.choice.content'>
-                            <p v-if='choice.judge == true' v-on:click.once='choiceSelect = true'>{{choice.choiceContent}}</p>
-                            <p v-if='choice.judge == false' v-on:click.once='choiceSelect = false'>{{choice.choiceContent}}</p>
+                            <p v-if='choice.judge == true' v-on:click='selectJudge(true)'>{{choice.choiceContent}}</p>
+                            <p v-if='choice.judge == false' v-on:click='selectJudge(false)'>{{choice.choiceContent}}</p>
                         </li>
                     </ul>
                     <!--選択前下に余白を開けるための要素-->
