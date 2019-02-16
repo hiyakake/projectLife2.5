@@ -172,11 +172,34 @@ body {
   border-right: 10px solid #D9E021;
 }
 
+#ques main #intoroTalk .talk > p img,
+#ques main #intoroTalk .talk > div img,
+#ques main #intoroTalk .img > p img,
+#ques main #intoroTalk .img > div img,
+#ques main #answerTalk .talk > p img,
+#ques main #answerTalk .talk > div img,
+#ques main #answerTalk .img > p img,
+#ques main #answerTalk .img > div img {
+  min-width: 250px;
+}
+
 #ques main #intoroTalk .talk:not(:last-child),
 #ques main #intoroTalk .img:not(:last-child),
 #ques main #answerTalk .talk:not(:last-child),
 #ques main #answerTalk .img:not(:last-child) {
   margin: 1.8rem 0;
+}
+
+#ques main #intoroTalk .red,
+#ques main #answerTalk .red {
+  background-color: red;
+  color: white;
+  padding: 1em;
+  width: 90%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #ques main #choice {

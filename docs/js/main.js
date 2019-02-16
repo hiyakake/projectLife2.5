@@ -17,7 +17,8 @@ new Vue({
             //テストサーバーから取得
             //const URL = 'https://dev1.cre-noa.me/quesAPI.php?r='+(this.quesRank)
             //サンプルデータから取得
-            const URL = 'api/ques1.json'
+            const URL = `api/ques${this.quesNo}.json`
+            //const URL = 'api/ques2.json'
             axios
                 .get(URL)
                 .then(response => (this.json = response.data))
@@ -39,6 +40,7 @@ new Vue({
             this.quesNo++
             this.choiceSelect = null
             window.scrollTo(0,0)
+            this.getQuesJson()
         }
     },
     mounted:function(){
