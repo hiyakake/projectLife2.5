@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>人生ゲームネット「ネットで生きる」</title>
     <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
     <div id="vm">
@@ -72,11 +73,15 @@
                 <!--説明文-->
                 <section id="description">
                     <!--正解だった場合-->
-                    <p v-if='choiceSelect == true' v-for='text in json.description.ifTrue'>{{text}}</p>
+                    <p v-if='choiceSelect == true' v-for='text in json.description.ifTrue' v-html='text'></p>
                     <!--不正解だった場合-->
-                    <p v-if='choiceSelect == false' v-for='text in json.description.ifTrue'>{{text}}</p>
+                    <p v-if='choiceSelect == false' v-for='text in json.description.ifTrue' v-html='text'></p>
                 </section>
             </main>
+            <footer>
+                <button v-on:click='nextQues()' v-if='choiceSelect != null' id="nextQues" class="fas fa-arrow-right"></button>
+                <small>Copyright (C) nextlav.xyz 2015-2019</small>
+            </footer>
         </main>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
