@@ -5,5 +5,5 @@
 
 # 開発用サーバー
 
-フロントエンド　https://lavp.github.io/projectLife2.5/
-DB　　　　　　　https://dev1.cre-noa.me/
+- フロントエンド　https://lavp.github.io/projectLife2.5/
+- DB　　　　　　　https://dev1.cre-noa.me/
