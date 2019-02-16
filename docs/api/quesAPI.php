@@ -1,56 +1,49 @@
 <?php
+$reqid = $_GET[q];//問題番号の取得
 
-  $reqid = $_GET[q];
-$maindata ='
+//json template
 
-{
-    "intoroTalk":[
-        {
-            "dataType":"talk",
-            "who":"Aさん",
-            "content":"セリフ"
-        },
-        {
-            "dataType":"img",
-            "who":"Bさん",
-            "content":"imagePath"
-        }
-    ],
-    "choice":{
-        "buttonList":[
-            {
-                "choiceContent":"選択肢１内容",
-                "judge":false
-            },
-            {
-                "choiceContent":"選択肢２内容",
-                "judge":true
+
+
+//dblogin
+$mysqli = new mysqli('localhost', 'nextlav-lifead', '9jWHrZbmVCxOLyOt', 'nextlav-life2_5');
+          if ($mysqli->connect_error) {
+            echo $mysqli->connect_error;
+            echo "サービスが一時的に停止しています。ご不便をおかけし、大変申し訳ございません。";
+            exit();
+          } else {
+            $mysqli->set_charset("utf8");
+            echo "db logined";
+            $question_sql = "select * from question where id = $reqid";
+            $answer_sql = "select * from answer where id = $reqid";
+
+            //dbから当該問題情報を取得する
+            if ($result = $mysqli->query($question_sql)) {
+              $questions = $result->fetch_assoc(); // dbデータ格納
+              echo "$questions[text]";
+
+              //問題が取得できたら、当該説明文,回答等を取得する
+              if ($result = $mysqli->query($answer_sql)) {
+                $answers = $result->fetch_assoc();
+              echo "$answers[ans]";
+              }
+
+              /*
+              これ以降、JSONファイルをtemplateから取得するとして、変数をechoしながらJSONを作成する。
+
+              */
+
+            }else{
+              //問題情報が取得できない場合に出力する
+              echo "id,または遷移が不正です。";
             }
-        ],
-        "html":"html tag here"
-    },
-    "answerTalk":[
-        {
-            "dataType":"talk",
-            "who":"Aさん",
-            "content":"セリフ"
-        },
-        {
-            "dataType":"img",
-            "who":"Bさん",
-            "content":"imagePath"
-        }
-    ],
-    "description":[
-        "説明文段落１",
-        "説明文段落２"
-    ]
-}
 
 
-';
+          }
+
 
 header('Content-Type: application/json; charset=utf-8');
+//JSONは下のechoで出力する。インデントは不可
 echo $maindata;
 
  ?>
