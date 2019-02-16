@@ -27,8 +27,8 @@ new Vue({
         },
         nextQues:function(){
             //次の問題のランクを決定
-            if(this.choiceSelect == true) this.quesRank++
-            else this.quesRank--
+            if(this.choiceSelect == true) this.quesRank--
+            else this.quesRank++
             if(this.quesRank > 2) this.quesRank = 2
             if(this.quesRank < 0) this.quesRank = 0
             //結果格納
