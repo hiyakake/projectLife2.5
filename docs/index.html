@@ -25,7 +25,7 @@
             <header>
                 <h1 id="number">Q{{quesNo}}</h1>
                 <div id="progressBar">
-                    <div id="progressLine" v-bind:style='{width : quesNo*10 + "%"}'>{{quesNo*10}}%</div>
+                    <div id="progressLine" v-bind:style='{width : (quesNo-1)*10 + "%"}'>{{(quesNo-1)*10}}%</div>
                 </div>
             </header>
             <main>
