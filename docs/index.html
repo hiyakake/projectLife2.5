@@ -71,13 +71,13 @@
                      <!--もし不正解を選択した場合-->
                     <ul v-if='choiceSelect == false'>
                         <li v-for='talk in json.answerTalk.ifFalse' v-bind:class='talk.dataType' v-bind:data-who='talk.who'>
-                                <p v-if='talk.dataType == "talk"' v-html='talk.content' v-bind:data-who='talk.who'></p>
-                                <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who' v-bind:data-who='talk.who'>
-                                    <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
-                                    <p v-html='talk.contentText'></p>
-                                </div>
-                                <p v-if='talk.dataType == "red"' v-html='talk.content'></p>
-                            </li>
+                            <p v-if='talk.dataType == "talk"' v-html='talk.content' v-bind:data-who='talk.who'></p>
+                            <div v-if='talk.dataType == "img"' v-bind:data-who='talk.who' v-bind:data-who='talk.who'>
+                                <img v-bind:src='"assets/images/"+talk.contentImg' alt="">
+                                <p v-html='talk.contentText'></p>
+                            </div>
+                            <p v-if='talk.dataType == "red"' v-html='talk.content'></p>
+                        </li>
                     </ul>
                 </section>
                 <!--説明文-->
@@ -86,7 +86,7 @@
                     <p v-for='text in json.description.ifTrue' v-html='text'></p>
                 </section>
                 <!--不正解だった場合-->
-                <section id="description" v-if='choiceSelect == true'>
+                <section id="description" v-if='choiceSelect == false'>
                     <p v-for='text in json.description.ifFalse' v-html='text'></p>
                 </section>
 
