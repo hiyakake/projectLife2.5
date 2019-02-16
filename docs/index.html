@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#00ADA5">
     <title>人生ゲームネット「ネットで生きる」</title>
+    <link rel="stylesheet" href="assets/style/reset.css">
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
@@ -91,5 +92,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.5/dist/vue.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'zqa2lpq',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
 </body>
 </html>
