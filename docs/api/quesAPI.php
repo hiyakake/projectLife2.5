@@ -3,17 +3,14 @@ $reqid = $_GET[q];//問題番号の取得
 
 //json template
 
-
-
 //dblogin
 $mysqli = new mysqli('localhost', 'nextlav-lifead', '9jWHrZbmVCxOLyOt', 'nextlav-life2_5');
           if ($mysqli->connect_error) {
             echo $mysqli->connect_error;
-            echo "サービスが一時的に停止しています。ご不便をおかけし、大変申し訳ございません。";
+            echo "サービスが一時的に停止しています。";
             exit();
           } else {
             $mysqli->set_charset("utf8");
-            echo "db logined";
             $question_sql = "select * from question where id = $reqid";
             $answer_sql = "select * from answer where id = $reqid";
 
