@@ -295,4 +295,8 @@ body {
   padding: 1em 0;
   font-size: 0.6em;
 }
+
+#end th, #end td, #end tr {
+  border: black solid 3px;
+}
 /*# sourceMappingURL=style.css.map */

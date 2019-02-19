@@ -40,7 +40,12 @@ new Vue({
             this.quesNo++
             this.choiceSelect = null
             window.scrollTo(0,0)
-            this.getQuesJson()
+            //最終問題だったら結果画面へ、そうでなければ次の問題へ
+            if(this.quesNo <= 3){
+                this.getQuesJson()
+            }else{
+                this.screenSwitch = 'end'
+            }
         }
     },
     mounted:function(){
