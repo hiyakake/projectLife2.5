@@ -112,10 +112,32 @@ body{
                 &[data-who=kotori]{
                     flex-direction: row;
                     padding-left:5%; 
+                    position: relative;
+                    &::before{
+                        content: "かおり";
+                        display: inline-block;
+                        transform: rotate(90deg);
+                        font-size: 15px;
+                        position: absolute;
+                        left: 1.2em;
+                        top: 1.5em;
+                        color: white;
+                    }
                 }
                 &[data-who=narration]{
                     flex-direction: row-reverse;
                     padding-right:5%; 
+                    position: relative;
+                    &::before{
+                        content: "ガイド";
+                        display: inline-block;
+                        transform: rotate(90deg);
+                        font-size: 15px;
+                        position: absolute;
+                        right: 1.2em;
+                        top: 1.5em;
+                        color: white;
+                    }
                 }
                 >p,
                 >div{
@@ -124,10 +146,10 @@ body{
                     padding: 1em;
                     max-width: 70%;
                     &[data-who=kotori]{
-                        border-left: 10px solid $blue;
+                        border-left: 15px solid $blue;
                     }
                     &[data-who=narration]{
-                        border-right: 10px solid $yellow;
+                        border-right: 15px solid $yellow;
                     }
                     img{
                         min-width: 250px;
