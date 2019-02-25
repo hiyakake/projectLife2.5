@@ -42,7 +42,7 @@ new Vue({
             window.scrollTo(0,0)
             //最終問題だったら結果画面へ、そうでなければ次の問題へ
             if(this.quesNo <= 3){
-                this.getQuesJson()
+                this.getQuesJson() 
             }else{
                 this.screenSwitch = 'end'
             }
